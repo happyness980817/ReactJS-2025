@@ -1,18 +1,24 @@
 import React from "react";
 
 function App() {
-  const [counter, setCouter] = React.useState(0);
-  const onClick = () => {
-    // setCouter(counter + 1);
-    // useState 의 setter function 은 함수 또는 state 를 parameter 로 받을 수 있음.
-    // 함수일 경우 현재 state 를 parameter 로 전달
-    // setter 내부에 함수가 있으면 함수 파라미터가 현재 state 값으로 인식되고, 함수가 리턴하는 값이 새로운 state 값으로 바뀐다
-    setCouter((current) => current + 1);
+  const [minutes, setMinutes] = React.useState();
+  const onChange = (event) => {
+    setMinutes(event.target.value);
   };
   return (
     <div>
-      <h3>Total Clicks: {counter}</h3>
-      <button onClick={onClick}>Click Me!</button>
+      <h1>Units Converter</h1>
+      <label htmlFor="minutes">Minutes</label>
+      <input
+        value={minutes}
+        id="minutes"
+        placeholder="Minutes"
+        type="number"
+        onChange={onChange} // event handler 들은 event listener 에 의해 호출될 때 자동으로 이벤트 객체를 파라미터로 받음
+      />
+      <h4>You want to convert {minutes}</h4>
+      <label htmlFor="hours">Hours</label>
+      <input id="hours" placeholder="Hours" type="number" />
     </div>
   );
 }
