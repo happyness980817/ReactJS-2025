@@ -8,11 +8,11 @@ import Detail from "./routes/Detail.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    Component: Home,
   },
   {
     path: "/movie",
-    element: <Detail />,
+    Component: Detail,
   },
   {
     path: "/hello",
