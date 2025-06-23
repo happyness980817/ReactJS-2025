@@ -25,6 +25,7 @@ function Home() {
           {movies.map((movie) => (
             <Movie
               key={movie.id} // key 는 React.js 에서만, map 안에서 component들을 render 할 때 사용
+              id={movie.id}
               coverImg={movie.medium_cover_image}
               title={movie.title}
               summary={movie.summary}
